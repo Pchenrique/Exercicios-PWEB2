@@ -18,9 +18,9 @@
 			event.preventDefault();
 		}
 
-			validador.addEventListener("blur", () => {
-			  let CPFFormatado = validador.value.replace( /^([\d]{3})([\d]{3})([\d]{3})([\d]{2})$/, "$1.$2.$3-$4");
-			  
+			validador.addEventListener("keyup", () => {
+			  let CPFFormatado = validador.value.replace(/[\D]/g, "").replace( /^([\d]{3})([\d]{3})([\d]{3})([\d]{2})$/, "$1.$2.$3-$4");
+
 			  validador.value = CPFFormatado;
 			});
 	</script>
