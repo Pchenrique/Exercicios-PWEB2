@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form id="teste">
+		<input type="text" id="validador">
+		<input type="submit" id="validar" value="Validar">
+	</form>
+
+	<script type="text/javascript">
+		const form = document.querySelector("#teste");
+		const validador = document.querySelector("#validador");
+		const btnvalidar = document.querySelector("#validar");
+
+		form.onsubmit = event => {
+			event.preventDefault();
+		}
+
+			validador.addEventListener("blur", () => {
+			  let CPFFormatado = validador.value.replace( /^([\d]{3})([\d]{3})([\d]{3})([\d]{2})$/, "$1.$2.$3-$4");
+			  
+			  validador.value = CPFFormatado;
+			});
+	</script>
+</body>
+</html>
